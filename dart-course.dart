@@ -38,6 +38,119 @@ void main() {
   String texto1 = numero1.toString();
   print(texto1);
 
+  // Incremento y decremento de variables
+  // +, -, -expr, *, /, ~/ y %
+  int valor1 = 7;
+  int valor2 = 3;
+
+  int resultado = valor1 + valor2;
+  print("$valor1 + $valor2 = $resultado");
+
+  resultado = valor1 - valor2;
+  print("$valor1 - $valor2 = $resultado");
+
+  // Operaciones Relacionales
+  // ==, =!, =>, >, < y <=
+  String valor4 = "Hola";
+  String valor5 = "Adiós";
+
+  var resultado2 = valor4 == valor5;
+  print("$valor4 == $valor5 = $resultado2");
+
+
+  // Operaciones Lógicas
+  // ||, &&, ! y ?
+  bool llueve = true;
+  bool haceFrio = false;
+
+  bool llevoAbrigo = llueve || haceFrio;
+  print("$llueve || $haceFrio == $llevoAbrigo");
+
+  llevoAbrigo = llueve && haceFrio;
+  print("$llueve && $haceFrio == $llevoAbrigo");
+
+  // Condicionales
+  int mascotas = 5;
+
+  if(mascotas == 0){
+    print("No tienes mascotas");
+  } else {
+    if (mascotas == 1) {
+      print("Solo tienes una mascota");
+    } else {
+      print ("Tienes $mascotas mascotas");
+    }
+  }
+
+  // Collecion - grupo de valores dentro de una misma var
+
+  // List - secuencia ordenada de valores de un tipo especifico y tamaño variable
+  //Propiedades: first, isEmpty, inNotEmpty, lenght, last, reversed
+  //funciones: add, insert, removeAt, clear
+
+  List<String> friends = [];
+  amigos.insert(1, "Damian");
+
+  // Set - similar a List pero NO puede tener variables duplicadas
+  //Propiedades: first, isEmpty, inNotEmpty, lenght, last, reversed
+  //funciones: add, remove, clear
+
+  // Set de paises
+  Set<String> paises = {};
+
+  paises = {"Argentina", "Brasil", "Colombia"};
+  print(paises);
+  paises.add("Argentina");
+  print(paises);
+
+  for(int i = 0; i < paises.length; i++) {
+    print(paises.elementAt(i));
+  }
+
+  // Map
+  //Propiedades: keys, values, isEmpty, isNotEmpty, lenght
+  //funciones: addAll, remove, clear
+  // tipo String para las llaves y dynamic para los datos(que pueden ser String o numero)
+  Map <String, dynamic>persona={
+    "nombre": "Ana",
+    "edad": 12,
+    "pais": "Colombia",
+    "altura": 1.54
+  };
+  print(persona.keys);
+  print(persona.values);
+
+  print(persona["nombre"]);
+
+  if(persona["pais"] == null) {
+    print("La persona no tiene pais");
+  }
+  else {
+    print(persona["pais"]);
+  }
+
+  // Coleccion de colecciones
+
+  Map restaurante = {
+    "nombre": "Pollos del monte",
+    "estrellas": [5, 4, 3, 4, 2]
+  };
+
+  print(restaurante);
+
+  if(restaurante['estrellas'] == null) {
+    print("El restaurante no tiene estrellas");
+  } else {
+    List<int> estrellas = restaurante["estrellas"];
+    int suma = 0;
+    for(int i = 0; i < estrellas.length; i++) {
+      suma += estrellas[i];
+    }
+    double promedio = suma / estrellas.length;
+    restaurante.addAll({"promedio": promedio});
+  }
+  print(restaurante);
+
 
 
 
